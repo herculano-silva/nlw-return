@@ -5,6 +5,35 @@ onScroll();
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
+  activeMenuAtCurrentSection()
+}
+
+function activeMenuAtCurrentSection() {
+ const targetLine = scrollY + innerHeight / 2
+ 
+  //  verificar se seção passou da linha
+  // quais dados vou precisar?
+
+  // o topo da seção
+  const sectionTop = services.offsetTop
+
+  // a altura da seção
+  const sectionHeight = home.offsetHeight
+  
+  // o topo da seção chegou ou ultrapassou a linha alvo 
+  const sectionTopReachOrPassedTargetline = targetLine >= sectionTop
+
+  // informações dos dados e da logica
+  console.log('o topo da seção chegou ou passou da linha', sectionTopReachOrPassedTargetline)
+
+  // verificar se a base está abaixo da linha alvo
+  // quais dados vou precisar?
+
+  // a seção termina onde?
+  const sectionEndAt = sectionTop + sectionHeight
+  console.log(sectionEndAt)
+
+
 }
 
 function showNavOnScroll(){
